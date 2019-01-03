@@ -8,4 +8,4 @@ phases:
 artifacts:
   files:
     - 'Dockerfile'
-    - 'target/example-1.0.0-SNAPSHOT.jar'
+    - 'target/bookshelf-service.jar'
