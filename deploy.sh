@@ -13,7 +13,7 @@
 # - AWS_SECRET_ACCESS_KEY env variable
 #
 # usage: ./deploy.sh name-of-application staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
-
+AWS_ACCOUNT_ID='964312226953'
 set -e
 start=`date +%s`
 
@@ -54,15 +54,15 @@ if [ -z "$AWS_ACCOUNT_ID" ]; then
   exit 1
 fi
 
-if [ -z "$AWS_ACCESS_KEY_ID" ]; then
-  echo "AWS_ACCESS_KEY_ID was not provided, aborting deploy!"
-  exit 1
-fi
-
-if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
-  echo "AWS_SECRET_ACCESS_KEY was not provided, aborting deploy!"
-  exit 1
-fi
+# if [ -z "$AWS_ACCESS_KEY_ID" ]; then
+#   echo "AWS_ACCESS_KEY_ID was not provided, aborting deploy!"
+#   exit 1
+# fi
+#
+# if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
+#   echo "AWS_SECRET_ACCESS_KEY was not provided, aborting deploy!"
+#   exit 1
+# fi
 
 EB_BUCKET=$NAME
 ENV=$NAME-$STAGE
