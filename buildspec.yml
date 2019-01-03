@@ -5,6 +5,7 @@ phases:
     commands:
       - mvn clean
       - mvn install
+      - ./deploy.sh bookshelf-service dev us-east-2 14c5d91fa6bc973d5996cb259918853e7478f6f1
 artifacts:
   files:
     - 'Dockerfile'

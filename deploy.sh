@@ -64,7 +64,7 @@ if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
   exit 1
 fi
 
-EB_BUCKET=$NAME-deployments
+EB_BUCKET=$NAME
 ENV=$NAME-$STAGE
 VERSION=$STAGE-$SHA1-$(date +%s)
 ZIP=$VERSION.zip
@@ -103,10 +103,10 @@ zip -r $ZIP Dockerrun.aws.json
 aws s3 cp $ZIP s3://$EB_BUCKET/$ZIP
 
 # Create a new application version with the zipped up Dockerrun file
-aws elasticbeanstalk create-application-version --application-name $NAME --version-label $VERSION --source-bundle S3Bucket=$EB_BUCKET,S3Key=$ZIP
+#aws elasticbeanstalk create-application-version --application-name $NAME --version-label $VERSION --source-bundle S3Bucket=$EB_BUCKET,S3Key=$ZIP
 
 # Update the environment to use the new application version
-aws elasticbeanstalk update-environment --environment-name $ENV --version-label $VERSION
+#aws elasticbeanstalk update-environment --environment-name $ENV --version-label $VERSION
 
 end=`date +%s`
 
