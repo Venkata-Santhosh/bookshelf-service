@@ -13,7 +13,7 @@
 # - AWS_SECRET_ACCESS_KEY env variable
 #
 # usage: ./deploy.sh name-of-application staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
-AWS_ACCOUNT_ID='964312226953'
+AWS_ACCOUNT_ID=''
 set -e
 start=`date +%s`
 
